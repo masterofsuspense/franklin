@@ -1,0 +1,11 @@
+<div class="grid_4">
+	<strong>Tapahtumat</strong>
+	
+	<ul>
+	<% for event in @events %>
+		<li><%= link_to event.title, event %></li>
+	<% end %>
+	</ul>
+	
+	<%= link_to "Kaikki tapahtumat", :controller => 'events', :action => 'list' %>
+</div>

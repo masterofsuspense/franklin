@@ -1,0 +1,34 @@
+<h1>Listing retailers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Zipcode</th>
+    <th>Province</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Website</th>
+    <th>Retailer category</th>
+  </tr>
+
+<% for retailer in @retailers %>
+  <tr>
+    <td><%=h retailer.name %></td>
+    <td><%=h retailer.address %></td>
+    <td><%=h retailer.zipcode %></td>
+    <td><%=h retailer.province %></td>
+    <td><%=h retailer.phone %></td>
+    <td><%=h retailer.email %></td>
+    <td><%=h retailer.website %></td>
+    <td><%=h retailer.retailer_category_id %></td>
+    <td><%= link_to 'Show', retailer %></td>
+    <td><%= link_to 'Edit', edit_retailer_path(retailer) %></td>
+    <td><%= link_to 'Destroy', retailer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New retailer', new_retailer_path %>

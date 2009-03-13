@@ -1,0 +1,20 @@
+<h1>Listing post_categories</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+
+<% for post_category in @post_categories %>
+  <tr>
+    <td><%=h post_category.title %></td>
+    <td><%= link_to 'Show', post_category %></td>
+    <td><%= link_to 'Edit', edit_post_category_path(post_category) %></td>
+    <td><%= link_to 'Destroy', post_category, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New post_category', new_post_category_path %>

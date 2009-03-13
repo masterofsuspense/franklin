@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @retailer_category.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @retailer_category.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_retailer_category_path(@retailer_category) %> |
+<%= link_to 'Back', retailer_categories_path %>

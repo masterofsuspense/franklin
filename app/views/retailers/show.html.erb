@@ -1,0 +1,43 @@
+<p>
+  <b>Name:</b>
+  <%=h @retailer.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @retailer.address %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%=h @retailer.zipcode %>
+</p>
+
+<p>
+  <b>Province:</b>
+  <%=h @retailer.province %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @retailer.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @retailer.email %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%=h @retailer.website %>
+</p>
+
+<p>
+  <b>Retailer category:</b>
+  <%=h @retailer.retailer_category_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_retailer_path(@retailer) %> |
+<%= link_to 'Back', retailers_path %>

@@ -1,0 +1,16 @@
+<div class="grid_8">
+	<% for post in @posts %>
+		<div id="post">
+			<strong><%= post.title %></strong> Julkaistu: <%= post.created_at.strftime("%d.%m.%y Kello %H:%M")%><br/>
+			<p><%= post.body %></p>
+		</div>
+	<% end %>
+</div>
+
+<div class="grid_4">
+	<ul>
+		<% for post in @posts %>
+			<li><%= link_to post.title, post %></li>
+		<% end %>
+	</ul>
+</div>

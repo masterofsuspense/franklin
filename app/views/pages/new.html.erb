@@ -1,0 +1,55 @@
+<div class="grid_8">
+	
+	<h3>Uusi Sivu</h3>
+	
+	<% form_for(@page) do |f| %>
+	  <%= f.error_messages %>
+	<%= f.hidden_field :user_id %>
+	  <p>
+	    <%= f.label :title %><br />
+	    <%= f.text_field :title %>
+	  </p>
+	  <p>
+	    <%= f.label :content %><br />
+	    <%= f.text_area :content %>
+	  </p>
+	<%= link_to 'Back', pages_path %>
+</div>
+<div class="grid_4">
+		<p>
+			<%= f.label :page_url %>
+			<%= f.text_field :page_url %>
+  	<p>
+	    <%= f.label :navlabel %><br />
+	    <%= f.text_field :navlabel %>
+	  </p>
+	  <p>
+	    <%= f.label :position %><br />
+	    <%= f.text_field :position %>
+	  </p>
+	  <p>
+	    <%= f.label :public %> <%= f.radio_button :status, 'public'  %>
+			<%= f.label :draft %> <%= f.radio_button :status, 'draft' %>
+			<%= f.label :private %> <%= f.radio_button :status, 'private' %>
+	  </p>
+	  <p>
+	    <%= f.label :parent_id %><br />
+	    <%= f.collection_select :parent_id, Page.find(:all), :id, :title, :include_blank => true %>
+	  </p>
+	  <p>
+	    <%= f.label :redirect %><br />
+	    <%= f.check_box :redirect %>
+	  </p>
+	  <p>
+	    <%= f.label :redirect_action_name %><br />
+	    <%= f.text_field :redirect_action_name %>
+	  </p>
+	  <p>
+	    <%= f.label :redirect_controller_name %><br />
+	    <%= f.text_field :redirect_controller_name %>
+	  </p>
+	  <p>
+	    <%= f.submit "Create" %>
+	  </p>
+	<% end %>
+</div>

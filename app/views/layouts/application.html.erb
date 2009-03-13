@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Pages: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'reset','960','text','scaffold','greenrock' %>
+</head>
+<body>
+	<div class="container_12">
+		
+		<div class="grid_4" id="header"><h1>Green Rock Oy</h1></div>
+		
+		<div class="grid_8" id="tier-1-navigation">			
+			<ul>
+				<% @tabs.each do |page| -%>
+					<li><%= link_to page.navlabel, view_page_path(page.page_url) %></li>
+				<% end -%>
+				<% if !current_user %>
+					<li><a href="/login">Login</a></li>
+				<% else %>
+					<li><a href="/logout">Logout</a></li>
+				<% end %>
+			</ul>			
+		</div>
+		
+		<div class="clear">&nbsp;</div>
+		
+		<div class="grid_12"><p style="color: green"><%= flash[:notice] %></p></div>
+		
+		<div class="clear">&nbsp;</div>
+		
+		<%= yield  %>
+		
+		<div class="clear">&nbsp;</div>
+		
+		<div class="grid_4">
+			<p>&copy; 2009 Green Rock Oy</p>
+		</div>
+		
+		<div class="grid_4">
+			<strong>Uutiset</strong>
+			<ul>
+				<% for post in @posts %>
+					<li><%= link_to post.title, post %></li>
+				<% end %>
+			</ul>
+		</div>
+		
+		<div class="grid_4">
+			<strong>Tapahtumat</strong>
+			<ul>
+				<% for event in @events %>
+					<li><%= link_to event.title, event %> - <%= event.event_category.name %> - <%= event.event_time.strftime("%d.%m.%y") %></li>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="clear">&nbsp;</div>
+
+		<div class="grid_12" id="footer">
+			<p>Löydä lähin jälleenmyyjäsi kätevästi <%= link_to "täältä", retailers_path %></p>
+		</div>
+	</div>
+</body>
+</html>

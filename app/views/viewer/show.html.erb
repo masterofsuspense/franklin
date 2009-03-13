@@ -1,0 +1,28 @@
+<% if @page.title == 'admin'%>
+	<div class="grid_12" id="sub_nav">
+		<ul>
+			<li><%= link_to "Uusi Sivu", new_page_path %></li>
+			<li><%= link_to "Uusi Jälleenmyyjä", new_retailer_path %></li>
+			<li><%= link_to "Uusi Tapahtuma", new_event_path %></li>
+			<li><%= link_to "Uusi Uutinen", new_post_path %></li>
+		</ul>
+	</div>
+<% else %>
+	<% unless @subpages.empty? %>
+		<div class="grid_12" id="sub_nav">
+			<ul>
+				<% for page in @subpages %>
+					<li><%= link_to page.navlabel, view_page_path(page.page_url) %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+<% end %>
+
+<%= @page.content %>
+
+<% if current_user %>
+<div class="grid_12">
+	<%= link_to 'Edit', edit_page_path(@page.id) %>
+</div>
+<% end %>

@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  content: MyText
+  navlabel: MyString
+  position: 1
+  status: MyString
+  user_id: 1
+  parent_id: 1
+  redirect: false
+  redirect_action_name: MyString
+  redirect_controller_name: MyString
+
+two:
+  title: MyString
+  content: MyText
+  navlabel: MyString
+  position: 1
+  status: MyString
+  user_id: 1
+  parent_id: 1
+  redirect: false
+  redirect_action_name: MyString
+  redirect_controller_name: MyString

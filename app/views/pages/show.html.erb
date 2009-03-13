@@ -1,0 +1,18 @@
+<div class="grid_12">
+	<ul>
+		<li>Title: <%= @page.title %></li>
+		<li>Content: <%=h truncate(@page.content) %></li>
+		<li>Page Url: <%=h @page.page_url %></li>
+		<li>Navlabel: <%= @page.navlabel %></li>
+		<li>Position: <%= @page.position %></li>
+		<li>Status: <%= @page.status %></li>
+		<li>User: <%= @page.user.first_name %> <%= @page.user.last_name %></li>
+		<% if @page.parent_id == 'true' %><li>Parent: <%= @page.parent.navlabel %></li><% end %>
+		<li>Redirect: <%= @page.redirect? ? "TRUE" : "FALSE" %></li>
+		<li>Redirect Controller: <%= @page.redirect_controller_name %></li>
+		<li>Redirect Action: <%= @page.redirect_action_name %></li>
+	</ul>
+</div>
+
+<div class="grid_12" id="retailer_info"><%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %></div>

@@ -1,0 +1,44 @@
+<div class="grid_6">
+<h3>Luo Uusi Tapahtuma</h3>
+
+<% form_for(@event) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :event_time %><br />
+    <%= f.datetime_select :event_time %>
+  </p>
+  <p>
+    <%= f.label :event_category_id %><br />
+    <%= f.collection_select :event_category_id, EventCategory.find(:all), :id, :name %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+</div>
+
+<div class="grid_6">
+	
+	<h3>Tapahtuma Kategoriat</h3>
+	
+	<ul>
+		<% for event_category in EventCategory.find(:all) do %>
+			<li><%= event_category.name %></li>
+		<% end %>
+	</ul>
+	
+	<%= render :partial => 'new_event_category' %>
+</div>
+
+<div class="grid_12">
+	<%= link_to 'Back', events_path %>
+</div>

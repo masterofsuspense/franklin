@@ -1,0 +1,34 @@
+<div class="grid_12" id="page-header">
+	<h3>Jälleenmyyjät</h3>
+</div>
+
+<div class="clear">&nbsp;</div>
+
+<div class="grid_3" id="retailer-search">
+	<p>Tähän tulee jälleenmyyjien haku</p>
+</div>
+
+<div class="grid_9" id="retailer-list">
+	<table>
+		<tr>
+			<th>Nimi</th>
+			<th>Osoite</th>
+			<th>Puhelin</th>
+			<th>Sähköposti</th>
+			<th>WWW</th>
+		</tr>
+		<% for retailer in @retailers %>
+			<tr id="retailer-table-<%= cycle('odd', 'even') %>">
+				<td><%= link_to retailer.name, retailer %></td>
+				<td><%= retailer.address %>, <%= retailer.zipcode %> <strong><%= retailer.province %></strong></td>
+				<td><%= retailer.phone %></td>
+				<td><%= retailer.email %></td>
+				<td><%= retailer.website %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+
+<div class="clear">&nbsp;</div>
+
+<div class="grid_12" id="retailer-info"><p>Jos et löydä lähintä jälleenmyyjää, niin tiedustele lähimmän IISI-myyjäsi tietoja numerosta 029 123 1151</p></div>

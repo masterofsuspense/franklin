@@ -1,0 +1,90 @@
+#header h1 {
+	padding: 20px 0  10px 20px;
+}
+
+#tier-1-navigation ul {
+	float: right;
+	margin-top: 20px;
+	margin-right: 10px;
+	padding: 0;
+}
+
+#tier-1-navigation ul li {
+	display: inline;
+}
+
+#footer {
+	border-top: 1px solid #000;
+	background-color: #ccc;
+}
+
+#footer p {
+	padding: 5px;
+}
+
+#debug {
+	border: 1px solid #333;
+}
+
+#page-header {}
+
+#retailer-search {
+	background-color: #ccc;
+}
+
+#retailer-list table {
+	width: 100%;
+}
+
+#retailer-list td {
+	text-align: center;
+	font-size: 0.8em;
+	padding: 5px;
+}
+
+#retailer-list td:first-child {
+	text-align: left;
+}
+
+#retailer-table-odd {
+	background-color: #fff;
+}
+
+#retailer-table-even {
+	background-color: #ccc;
+}
+
+#retailer-info {
+	margin: 10px;
+	background-color: #ccc;
+	text-align: center;
+	font-size: 0.6em;
+	color: #333;
+}
+
+#retailer-info p {
+	margin: 5px 0;
+}
+
+#sub_nav ul {
+	list-style: none;
+}
+
+#sub_nav ul li {
+	display: inline;
+}
+
+#admin-pages table {
+	width: 100%;
+}
+
+#admin-pages #odd {}
+
+#admin-pages #even {
+	background-color: #ccc;
+}
+
+#admin-pages table td {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

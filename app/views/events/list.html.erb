@@ -1,0 +1,9 @@
+<div class="grid_12">
+	<% for event in @events %>
+		<div id="event">
+			<strong><%= event.title %></strong><br />
+			<p><%= event.event_category.name %><span><%= event.event_time.strftime("%d.%m.%y") %></span></p><br />
+			<p><%= event.description %></p>
+		</div>
+	<% end %>
+</div>

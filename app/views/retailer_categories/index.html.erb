@@ -1,0 +1,22 @@
+<h1>Listing retailer_categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% for retailer_category in @retailer_categories %>
+  <tr>
+    <td><%=h retailer_category.name %></td>
+    <td><%=h retailer_category.description %></td>
+    <td><%= link_to 'Show', retailer_category %></td>
+    <td><%= link_to 'Edit', edit_retailer_category_path(retailer_category) %></td>
+    <td><%= link_to 'Destroy', retailer_category, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New retailer_category', new_retailer_category_path %>
